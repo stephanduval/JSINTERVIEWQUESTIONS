@@ -16,16 +16,18 @@ const users = [
   },
 ];
 
-function createUserNameList(userList) {
-  const userNameList = [];
-  userList.forEach((element) => userNameList.push(element.name));
-  return userNameList;
-}
-createUserNameList(users);
-console.log(createUserNameList(users));
+// function createUserNameList(userList) {
+//   const userNameList = [];
+//   userList.forEach((element) => userNameList.push(element.name));
+//   return userNameList;
+// }
+// createUserNameList(users);
+// console.log(createUserNameList(users));
 
 function createUserNameListWithMap(userList) {
-  const namesList = users.map((element) => element.name);
+  const namesList = users
+    .filter((element) => element.isActive == true)
+    .map((element) => element.name);
   console.log(namesList);
 }
 
